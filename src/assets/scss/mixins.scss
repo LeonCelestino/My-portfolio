@@ -1,0 +1,302 @@
+@mixin flex-xCenter-yCenter-row {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+}
+
+@mixin flex-xCenter-yCenter-column {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+
+
+@mixin flex-xspacebetween-yCenter-row {
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+}
+
+@mixin flex-xSpaceAround-yCenter-row {
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+}
+
+@mixin flex-xCenter-column
+{
+    display: flex;
+        align-items: center;
+        flex-direction: column;
+}
+
+
+@mixin flex-spacebetween-row 
+{
+    display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+}
+
+
+@mixin logo-medias
+{
+    @media (max-width: 1100px)
+    {
+        font-size: 3.8rem;
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 3.5rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 3rem;
+    }
+}
+
+
+@mixin navbar-anchor-medias 
+{
+    @media (max-width: 1920px)
+    {
+        font-size: 2.2rem;
+    }
+    @media (max-width: 1919px) 
+    {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 760px)
+    {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: 400px)
+    {
+        font-size: 1.6rem;
+    }
+
+}
+
+
+
+@mixin headerone-medias
+{
+    @media (min-width: 1920px) 
+    {
+        font-size: 5.2rem;
+    }
+
+    @media (max-width: 1919px)
+    {
+        font-size: 4.4rem;   
+    }
+    @media (max-width: 1100px) 
+    {
+        font-size: 4.2rem;
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 4.0rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 3.3rem;
+    }
+
+}
+
+@mixin headertwo-medias
+{
+    @media (min-width: 1920px) {
+        font-size: 4.2rem;
+    }
+
+    @media (max-width: 1919px)
+    {
+        font-size: 3.6rem;
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 3.4rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: 760px)
+    {
+        font-size: 3.0rem;
+    }
+
+    @media (max-width: 560px)
+    {
+        font-size: 2.6rem;
+    }
+
+
+
+    
+}
+
+@mixin headerthree-medias
+{
+    @media (min-width: 1920px) {
+        font-size: 3.0rem;
+    }
+
+    @media (max-width: 1919px)
+    {
+        font-size: 2.2rem;
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 2.0rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 760px)
+    {
+        font-size: 1.6rem;
+    }
+
+
+    
+}
+
+@mixin headerfour-medias
+{
+    @media (min-width: 1920px) {
+        font-size: 2.6rem;
+    }
+
+    @media (max-width: 1919px)
+    {
+        font-size: 1.8rem;
+    }
+
+    
+}
+
+@mixin paragraph-medias 
+{
+    @media (min-width: 1920px) 
+    {
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: 1919px)
+    {
+        font-size: 2.3rem;
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 2.1rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 1.7rem;
+    }
+    
+}
+
+
+@mixin anc-btn-medias
+{
+    display: inline-block;
+
+    margin-top: 2em;
+    padding: 15px;
+
+    color: $primary-light-color;
+    font-size: 2.5rem;
+    font-weight: $light-text;
+
+    background: $primary-dark-color;
+    
+    &:hover
+    {
+        background: $like-gray-color;
+    }
+                
+    @media (max-width: 1100px) {
+        padding: 15px;
+        font-size: 2rem;
+
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 760px)
+    {
+        font-size: 1.4rem;
+    }
+}
+
+@mixin icon-medias
+{
+    font-size: 6rem;
+
+    @media (max-width: 1100px) {
+        font-size: 4.5rem;
+
+    }
+
+    @media (max-width: 960px)
+    {
+        font-size: 4.3rem;
+    }
+
+    @media (max-width: 860px)
+    {
+        font-size: 4rem;
+    }
+
+}
+ 
+@mixin navbtn-media
+{
+    @media (min-width: 861px) 
+    {
+        display: none;
+    }
+
+    @media (max-width: 860px)   
+    {
+        font-size: 4rem;
+        color: white;
+    }
+}

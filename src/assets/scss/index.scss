@@ -1,0 +1,707 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+
+html
+{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    transition: 2s;
+}
+
+body 
+{
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), linear-gradient(to right, #112426, #112426) no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    
+
+    #root
+    {
+        margin: 0 auto;
+        max-width: 1440px;
+
+    }
+  
+    section
+    {
+        min-height: 972px;
+        padding: 5px;
+    }
+
+    
+    
+    header
+    {
+        @include flex-xspacebetween-yCenter-row;
+
+        width: 100%;
+        max-width: 1440px;
+        padding: 3em 5em;
+
+        position: fixed;
+        top: 0;
+        z-index: 30;
+
+        .logo
+        {
+
+            h3
+            {
+                color: $secondary-light-color;
+                font-size: 4rem;
+                font-weight: $bold-text;
+                user-select: none;
+
+
+                @include logo-medias;
+            }
+        }
+
+        .navBtn
+        {
+            @include navbtn-media;
+        }
+
+        .navBtn.active
+        {
+            visibility: hidden;
+        }
+ 
+
+        nav
+        {
+            ul
+            {
+                @include flex-xCenter-yCenter-row;
+                gap: 5em;
+
+                li  
+                {
+                    a
+                    {
+                        font-size: 2.7rem;
+                        color: $primary-light-color;
+
+                        transition: 0.2s ease-in-out;
+
+                        @include navbar-anchor-medias;
+
+                        cursor: pointer;
+                    }
+
+                    a:hover
+                    {
+                        color: $like-gray-color;
+                    }
+
+                    .active
+                    {
+                        color: $like-gray-color;
+                        font-weight: bold;
+
+                    }
+
+
+                }
+
+                @media (max-width: 860px) {
+                    display: none;
+                    transition: 0.2s linear;
+                }
+
+            }
+
+            .navBtn
+            {
+    
+                @include navbtn-media;
+                visibility: hidden;
+            }
+            
+            .navClose
+            {
+                position: absolute;
+                    top: 4rem;
+                    right: 5rem;
+                    z-index: 31;
+    
+            }
+
+            
+            
+        }
+
+        @media (max-width: 860px)
+        {
+            background: rgba(0,0,0,0.2);
+            nav
+            {
+                visibility: visible;
+                width: 0%;
+                transition: 0.2s linear;
+            }
+
+            nav.active ~ .navOpen
+            {
+                display: none;
+            }
+
+            nav.active
+            {
+                display: flex;
+                
+
+                width: 100%;
+                height: 100vh;
+
+                position: absolute;
+                    right: 0;
+                    top: 0;
+
+                background: rgba(17, 36, 38, 0.9);
+                transition: 0.2s linear;
+                .navClose
+                {
+                    visibility: visible;
+                    
+                }
+
+                ul
+                {
+                    width: 100%;
+                    padding-top: 30rem;
+                    display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: flex-start;
+
+
+                        transition: 0.2s linear;
+
+                    
+
+                
+                }
+            }
+            
+        } 
+        
+    }
+
+    .home
+    {
+        width: 100%;
+        height: 100vh;
+        max-height: 1290px;
+
+        position: relative;
+
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../css/images/bg.jpeg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        main
+        {
+            @include flex-xCenter-yCenter-row;
+
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+
+            article
+            {
+                width: 80%;
+                
+                h1 
+                {
+                    line-height: 0.7;
+                    @include headerone-medias;
+                       
+
+                }
+   
+                h2 
+                {
+                    @include headertwo-medias;
+                }
+
+                h1, h2
+                {
+                    color: $secondary-light-color;
+                    font-weight: $bold-text;
+
+                    @media (max-width: 1100px) {
+                        line-height: 1;
+                        
+                    }
+                }
+
+                p
+                {
+                    font-size: 2rem;
+                    color: $primary-light-color;
+                    @include paragraph-medias;
+                    
+                }
+
+                .anc-btn
+                {
+                    @include anc-btn-medias;
+                }
+ 
+
+            }
+            
+        }
+    }
+
+    /* ABOUT */
+
+    .about
+    {  
+        @include flex-xSpaceAround-yCenter-row;
+
+        width: 100%;
+        height: 100vh;
+        padding-top: 0em;
+
+        background: url(../css/images/bgTexture.avif) no-repeat;
+        background-size: cover;
+
+        @media (max-width: 760px)
+        {
+            height: 160vh;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 8em;
+        }
+
+        aside
+        {
+            width: 30%;
+            @include flex-xCenter-yCenter-column;
+            @media (max-width: 760px)
+            {
+                flex-direction: row;
+                gap: 30px;
+                margin-bottom: 50px;
+            }
+            a
+            {
+                color: $primary-light-color;
+                @include icon-medias; 
+            }
+
+            a:hover
+            {
+                color: $primary-dark-color;
+            }
+            
+        }
+
+        main
+        {
+            width: 60%;
+            article
+            {
+                h2
+                {
+                    @include headertwo-medias;
+
+                    margin-bottom: 0.9em;
+                    color: $secondary-light-color;
+                }
+                p
+                {
+                    @include paragraph-medias;
+                    margin-top: 0.4em;
+                    color: $primary-light-color;
+                }
+
+                a
+                {
+                    @include anc-btn-medias;
+                    margin-left: 15px;
+                }
+
+                .download-cv
+                {
+                    background: $like-background;
+                    
+                    &:hover
+                    {
+                        background: #1c3a3d;
+                    }
+                    
+
+                    @media (max-width: 400px)
+                    {
+                        width: 92%;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .projects
+    {
+        width: 100%;
+        height: 120vh;
+
+        background: url(../css/images/bgTexture.avif) no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media (max-width: 560px)
+        {
+            height: 180vh;
+        }
+        main
+        {
+            @include flex-xCenter-column;
+            width: 100%;
+            height: 100%;
+
+            padding-top: 10em;
+
+            .projects-box
+            {
+
+                @include flex-xCenter-yCenter-column;
+                position: relative;
+                h2
+                {
+                    @include headertwo-medias;
+                    color: $secondary-light-color ;
+                    text-align: center;
+                } 
+
+                .project-slider
+                {
+                    width: 80rem;
+                    height: 35rem;
+                    margin-top: 3em;
+                    border-radius: 1.5rem;
+                    object-fit: cover;
+                    position: relative;
+
+                    img
+                    {
+                        width: 100%;
+                        border-radius: 2.5rem;
+                        display: block;
+                    }
+
+                    h3
+                    {
+                        width: 100%;
+                        border-radius: 2.5rem 2.5rem 0 0;
+                        padding: 0.3em;
+
+                        position: absolute;
+                        background: rgba(0,0,0,0.7);
+                    }
+
+                    .buttons-box
+                    {
+                        width: 100%;
+                        border-radius: 0 0 2.5rem 2.5rem;
+
+                       
+
+                        position: absolute;
+                        bottom: -1rem;
+
+                        background: rgba(0,0,0,0.7);
+
+
+                        a
+                        {
+                            @include navbar-anchor-medias;
+                            display: inline-block;
+                            width: 50%;
+                            padding: 1rem;
+                            font-size: 2.7rem;
+                            text-align: center;
+                            color: $primary-light-color;
+
+                            &:hover
+                            {
+                                background: rgba(0,0,0,0.3);
+                            }
+                        }
+
+                        .repo-button
+                        {
+                            border-radius: 0 0 0 2.5rem;
+                            border-right: 3px solid rgba(0,0,0,0.5);
+                            @media (max-width: 400px)
+                            {
+                                border-right: 1px solid rgba(0,0,0,0.5);
+                            }
+                        }
+
+                        .live-button
+                        {
+                            border-radius: 0 0 2.5rem 0;
+                            border-left: 3px solid rgba(0,0,0,0.5);
+                            @media (max-width: 400px)
+                            {
+                                border-left: 1px solid rgba(0,0,0,0.5);
+                            }
+                        }
+
+
+                    }
+
+                    @media (max-width: 960px)
+                    {
+                        width: 60rem;
+                        height: 26rem;
+                    }
+
+                    @media (max-width: 760px)
+                    { 
+                        width: 40rem;
+                        height: 17rem;
+                    }
+
+                    @media (max-width: 560px)
+                    {
+                        width: 35rem;
+                        height: 15rem;
+                    }
+
+                    @media (max-width: 400px)
+                    {
+                        width: 30rem;
+                        height: 12.5rem;  
+                    }
+
+                   
+                }
+            }
+            
+            .skills-box
+            {
+                display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                    gap: 30px;
+
+                margin-top: 15em;
+                h2
+                { 
+                    @include headertwo-medias;
+                    color: $secondary-light-color;
+
+                    grid-column: span 2;
+
+                    @media (max-width: 760px)
+                    {
+                        grid-column: 1;
+                        text-align: center;
+                    }
+                }
+                
+                .flex-row
+                {
+                    display: flex;
+                        justify-content: center;
+                    svg
+                    {
+                        @include icon-medias;
+                        color: $primary-light-color;
+                    }
+                    h4, p
+                    {
+                        margin-left: 20px;
+                    }
+                    h4
+                    {
+                        @include headerfour-medias;
+                        color: $secondary-light-color
+
+                    }
+
+                    p
+                    {
+                        font-size: 2rem;
+                        text-transform: capitalize;
+                        color: $primary-light-color;
+                    }
+
+                    .flex-column
+                    {
+                        display: flex;
+                            flex-direction: column;
+                    }  
+                }
+
+                @media (max-width: 760px)
+                {
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: repeat(5, 1fr);
+                    padding-left: 10px;
+                    
+
+                }
+
+
+            }
+        }
+    }
+    
+    .contact
+    {
+        width: 100%;
+        height: 100vh;
+        padding-top: 10em;
+        background: url(../css/images/bgTexture.avif) no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+        @media (max-width: 860px)
+        {
+
+            height: 150vh;
+            padding-top: 20em;
+        }
+
+        main
+        {
+            @include flex-xCenter-column;
+            width: 100%;
+            height: 100%;
+
+            h2
+            {
+                @include headertwo-medias;
+                text-align: center;
+                color: $secondary-light-color;
+
+
+            }
+
+            p
+            {
+
+                padding: 5px;
+                width: 60%;
+                font-size: 2rem;
+
+            }
+
+            
+            .error::before{
+                content: 'Por favor, preencha todos os campos!';
+                display: block;
+                width: 100%;
+                padding: 5px;
+                color: $primary-light-color;
+                background: $like-gray-color;
+            }
+
+            .success::before{
+                content: 'A sua mensagem foi enviada!';
+                display: block;
+                width: 100%;
+                padding: 5px;
+                color: $primary-light-color;
+                background: $secondary-light-color;
+            }
+
+            form
+            {
+                @include flex-xCenter-yCenter-column;
+
+                width: 60%;
+                height: 60%;
+
+                margin-top: 4em;
+                @media (max-width: 860px)
+                {
+                    margin-top: 5em;
+                    width: 80%;
+                    height: 60%;
+                }
+
+                label
+                {
+                    @include paragraph-medias;
+                    width: 100%;
+                    margin-top: 15px;
+
+                    color: $primary-light-color;
+
+                }
+
+                input[type="text"],
+                input[type="email"]
+                {
+                    width: 100%;
+                    padding: 15px;
+                    font-size: 2rem;
+                    background: $primary-light-color;
+                }
+                input[type="submit"]
+                {
+                    width: 30%;
+                    margin-top: 1em;
+                    padding: 15px;
+
+
+                    font-size: 2rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $primary-light-color;
+
+                    cursor: pointer;
+
+                    background: $like-background;
+                    &:hover
+                    {
+                        background: #81535a;
+                    }
+
+                    @media (max-width: 580px)
+                    {
+                        width: 50%;
+                    }
+                }
+                textarea
+                {
+                    width: 100%;
+                    height: 200px;
+                    padding: 10px;
+                    font-size: 2rem;
+
+                    background: $primary-light-color;
+                }
+
+
+            }
+        }
+    }
+}
+
+
+.home::after
+{
+    content: '';
+
+    width: 100%;
+    max-width: 1440px;
+
+    height: 18rem;
+
+    position: absolute;
+    bottom: 0;
+
+    background: linear-gradient(to top, #0A0B0D, transparent);
+}
+
+  
