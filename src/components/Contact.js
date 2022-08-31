@@ -35,7 +35,10 @@ function Contact() {
             setBoolVal(true);
             textInput.replaceAll("\n", " <br /> ");
             console.log(textInput);
-
+            setNameInput('');
+            setSubjectInput('');
+            setEmailInput('');
+            setTextInput('');
             emailjs.sendForm('service_0x5o1uh', 'template_xyz9978', e.target, 'kO9H8IJDBqS8lyna1')
             .then((result) => {
                 console.log(result.text);
