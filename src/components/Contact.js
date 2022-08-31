@@ -25,7 +25,7 @@ function Contact() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (nameInput == '' || subjectInput == '' || emailInput == '' || textInput == '') 
+        if (nameInput === '' || subjectInput === '' || emailInput === '' || textInput === '') 
         {
             setBoolVal(false);
             console.log(boolVal);
@@ -54,7 +54,7 @@ function Contact() {
     <section id="contact" className="contact">
         <main>
             <h2>Isso foi o que eu tinha pra falar.<br /> Antes de ir, deseja dizer algo?</h2>
-            <p  className={!boolVal ? 'error' : 'success'}></p>
+            <p  className={!boolVal ? 'error' : ''}></p>
             <form onSubmit={handleSubmit}>
                 <label>Fale-me seu nome: </label>
                 <input type="text" placeholder="Nome" name="name" value={nameInput} onChange={handleNameChange}></input>
@@ -63,7 +63,7 @@ function Contact() {
                 <label>Diga seu e-mail para nos falarmos outra hora: </label>
                 <input type="email" name="email" placeholder="Email" value={emailInput} onChange={handleEmailChange}></input>
                 <label>Diga-me o que quer dizer: </label>
-                <textarea name="message" placeholder="Fale aqui!" value={textInput} onChange={handleTextChange}/>
+                <textarea rows="10" cols="30" wrap='hard' name="message" placeholder="Fale aqui!" value={textInput} onChange={handleTextChange}/>
                 <input type="submit" value="submit"></input>
             </form>
         </main>

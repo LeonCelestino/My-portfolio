@@ -11,8 +11,8 @@ function Projects() {
                 <div className="project-slider">
                     <img src={project1} alt="project1" />
                     <div className="buttons-box">
-                      <a className="repo-button" href="/">Repositório</a>
-                      <a className="live-button" href="/">Live Site</a>
+                      <a className="repo-button" href="https://github.com/LeonCelestino/interactive-card-challenge" target="_blank" rel="noreferrer">Repositório</a>
+                      <a className="live-button" href="https://leoncelestino.github.io/interactive-card-challenge/" target="_blank" rel="noreferrer">Live Site</a>
                     </div>
                 </div>
              </div>
