@@ -16,7 +16,7 @@ function About() {
             <p>Há tanta coisa que eu quero falar, mas para deixar curto vou direto ao ponto.</p>
             <p>Atuo como Front End Developer, e sou apaixonado por tecnologia e por design.</p>
             <p>Gosto de produzir sites por conta própria e desejo me profissionalizar na área e evoluir cada vez mais, por isso, estou sempre em busca de novos desafios!</p>
-            <a href="#projects">Olha o que faço!</a>
+            <a href="#projects">Meu trabalho</a>
             <a href="./files/curriculo.pdf" className="download-cv" download>Baixe meu CV!</a>
         </article>
       </main>

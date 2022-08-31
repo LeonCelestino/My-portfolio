@@ -19,9 +19,10 @@ function Contact() {
     }
     const handleTextChange = (e) => {
         setTextInput(e.target.value);
+        
     }
 
-    let userArrInp = [nameInput, subjectInput, emailInput, textInput];
+    let userArrInp = [nameInput, subjectInput, emailInput, textInput.replace("\n", "<br>")];
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,10 +33,9 @@ function Contact() {
         } else
         {
             setBoolVal(true);
-            setNameInput('');
-            setSubjectInput('');
-            setEmailInput('');
-            setTextInput('');
+            textInput.replaceAll("\n", " <br /> ");
+            console.log(textInput);
+
             emailjs.sendForm('service_0x5o1uh', 'template_xyz9978', e.target, 'kO9H8IJDBqS8lyna1')
             .then((result) => {
                 console.log(result.text);
