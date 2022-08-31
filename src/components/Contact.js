@@ -21,8 +21,6 @@ function Contact() {
         setTextInput(e.target.value);
         
     }
-
-    let userArrInp = [nameInput, subjectInput, emailInput, textInput.replace("\n", "<br>")];
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,14 +31,19 @@ function Contact() {
         } else
         {
             setBoolVal(true);
-            textInput.replaceAll("\n", " <br /> ");
-            console.log(textInput);
-            setNameInput('');
-            setSubjectInput('');
-            setEmailInput('');
-            setTextInput('');
-            emailjs.sendForm('service_0x5o1uh', 'template_xyz9978', e.target, 'kO9H8IJDBqS8lyna1')
+            
+            const newTextInput = textInput.replaceAll('\n', '<br />');
+
+            const templateParams = {
+                name: nameInput,
+                subject: subjectInput,
+                email: emailInput,
+                message: newTextInput
+            }
+
+            emailjs.send('service_0x5o1uh', 'template_xyz9978', templateParams, 'kO9H8IJDBqS8lyna1')
             .then((result) => {
+                
                 console.log(result.text);
                 
             }, (error) => {
@@ -66,7 +69,7 @@ function Contact() {
                 <label>Diga seu e-mail para nos falarmos outra hora: </label>
                 <input type="email" name="email" placeholder="Email" value={emailInput} onChange={handleEmailChange}></input>
                 <label>Diga-me o que quer dizer: </label>
-                <textarea rows="10" cols="30" wrap='hard' name="message" placeholder="Fale aqui!" value={textInput} onChange={handleTextChange}/>
+                <textarea name="message"  rows="10" cols="30" wrap='hard' placeholder="Fale aqui!" value={textInput} onChange={handleTextChange}/>
                 <input type="submit" value="submit"></input>
             </form>
         </main>

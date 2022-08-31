@@ -340,11 +340,11 @@ body
                     @include anc-btn-medias;
                     margin-left: 15px;
                     text-align: center;
-
+ 
                     @media (max-width: 560px)
                     {
                         width: 160px;
-                    }
+                    } 
                 }
 
                 .download-cv

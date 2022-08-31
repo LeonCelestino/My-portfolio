@@ -383,17 +383,18 @@ body .home main article .anc-btn:hover {
 @media (max-width: 960px) {
   body .home main article .anc-btn {
     font-size: 1.8rem;
-    padding: 10px;
+    padding: 15px;
   }
 }
 @media (max-width: 860px) {
   body .home main article .anc-btn {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 760px) {
   body .home main article .anc-btn {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding: 10px;
   }
 }
 body .about {
@@ -557,17 +558,18 @@ body .about main article a:hover {
 @media (max-width: 960px) {
   body .about main article a {
     font-size: 1.8rem;
-    padding: 10px;
+    padding: 15px;
   }
 }
 @media (max-width: 860px) {
   body .about main article a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 760px) {
   body .about main article a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding: 10px;
   }
 }
 @media (max-width: 560px) {
