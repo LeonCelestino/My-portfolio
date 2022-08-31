@@ -6,7 +6,8 @@ function Contact() {
     const [subjectInput, setSubjectInput] = useState('');
     const [emailInput, setEmailInput] = useState('');
     const [textInput, setTextInput] = useState('');
-    const [boolVal, setBoolVal] = useState(true);
+    const [boolError, setBoolError] = useState(true);
+    const [boolSuccess, setBoolSuccess] = useState(false);
 
     const handleNameChange = (e) => {
         setNameInput(e.target.value);
@@ -26,12 +27,13 @@ function Contact() {
         e.preventDefault();
         if (nameInput === '' || subjectInput === '' || emailInput === '' || textInput === '') 
         {
-            setBoolVal(false);
-            console.log(boolVal);
+            setBoolError(false);
+            setBoolSuccess(false);
         } else
         {
-            setBoolVal(true);
-            
+            setBoolError(true);
+            setBoolSuccess(true);
+
             const newTextInput = textInput.replaceAll('\n', '<br />');
 
             const templateParams = {
@@ -49,6 +51,10 @@ function Contact() {
             }, (error) => {
                 console.log(error.text);
             });
+            setNameInput('');
+            setSubjectInput('');
+            setEmailInput('');
+            setTextInput('');
 
             
 
@@ -60,7 +66,8 @@ function Contact() {
     <section id="contact" className="contact">
         <main>
             <h2>Isso foi o que eu tinha pra falar.<br /> Antes de ir, deseja dizer algo?</h2>
-            <p  className={!boolVal ? 'error' : ''}></p>
+            <p  className={!boolError ? 'error' : ''}></p>
+            <p className={boolSuccess ? 'success' : ''}></p>
             <form onSubmit={handleSubmit}>
                 <label>Fale-me seu nome: </label>
                 <input type="text" placeholder="Nome" name="name" value={nameInput} onChange={handleNameChange}></input>
