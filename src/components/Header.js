@@ -19,10 +19,10 @@ function Header() {
       </div>
       <nav className={click ? 'active' : ''}>
         <ul>
-          <li> <Link to="home" spy={true} smooth={true} offset={-5} duration={2000} onClick={closeMenu}>Olá!</Link> </li>
-          <li> <Link to="about" spy={true} smooth={true} offset={-5} duration={1000} onClick={closeMenu}>Quem sou?</Link> </li>
-          <li> <Link to="projects" spy={true} smooth={true} offset={-5} duration={1000} onClick={closeMenu}>O que faço?</Link> </li>
-          <li> <Link to="contact" spy={true} smooth={true} offset={-10} duration={2000} onClick={closeMenu}>Fale comigo!</Link> </li>
+          <li> <Link href="#home" to="home" spy={true} smooth={true} offset={-5} duration={2000} onClick={closeMenu}>Olá!</Link> </li>
+          <li> <Link href="#about" to="about" spy={true} smooth={true} offset={-5} duration={1000} onClick={closeMenu}>Quem sou?</Link> </li>
+          <li> <Link href="#projects" to="projects" spy={true} smooth={true} offset={-5} duration={1000} onClick={closeMenu}>O que faço?</Link> </li>
+          <li> <Link href="#contact" to="contact" spy={true} smooth={true} offset={-10} duration={2000} onClick={closeMenu}>Fale comigo!</Link> </li>
         </ul>
         <button className="navBtn navClose" onClick={handleClick}><FaTimes /></button>
       </nav>
